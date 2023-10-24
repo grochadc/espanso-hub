@@ -1,0 +1,6 @@
+name: "polyhedral-dice-rpg"
+title: "Poyhedral dice and RPG Oracles"
+description: Some Polyhedral dice and some system specific oracles I use.
+version: 0.1.2
+author: Gonzalo Rocha
+tags: ["rpg", "random", "dice"]

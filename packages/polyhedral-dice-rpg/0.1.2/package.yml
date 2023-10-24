@@ -1,0 +1,233 @@
+matches:
+  # Polyhedral Dice
+  - trigger: ":1d4"
+    replace: "[{{output}}]"
+    vars:
+      - name: output
+        type: random
+        params:
+          choices:
+            - "1"
+            - "2"
+            - "3"
+            - "4"
+
+  - trigger: ":1d6"
+    replace: "[{{output}}]"
+    vars:
+      - name: output
+        type: random
+        params:
+          choices:
+            - "1"
+            - "2"
+            - "3"
+            - "4"
+            - "5"
+            - "6"
+
+  - trigger: ":1d10"
+    replace: "[{{output}}]"
+    vars:
+      - name: output
+        type: random
+        params:
+          choices:
+            - "1"
+            - "2"
+            - "3"
+            - "4"
+            - "5"
+            - "6"
+            - "7"
+            - "8"
+            - "9"
+            - "10"
+
+  - trigger: ":1d20"
+    replace: "[{{output}}]"
+    vars:
+      - name: output
+        type: random
+        params:
+          choices:
+            - "1"
+            - "2"
+            - "3"
+            - "4"
+            - "5"
+            - "6"
+            - "7"
+            - "8"
+            - "9"
+            - "10"
+            - "11"
+            - "12"
+            - "13"
+            - "14"
+            - "15"
+            - "16"
+            - "17"
+            - "18"
+            - "19"
+            - "20"
+
+  # Multiple Dice
+  - trigger: ":2d10"
+    replace: "[{{die1}},{{die2}}]"
+    vars:
+      - name: die1
+        type: match
+        params:
+          trigger: ":1d10"
+      - name: die2
+        type: match
+        params:
+          trigger: ":1d10"
+
+  - trigger: ":2d20"
+    replace: "[{{die1}},{{die2}}]"
+    vars:
+      - name: die1
+        type: match
+        params:
+          trigger: ":1d20"
+      - name: die2
+        type: match
+        params:
+          trigger: ":1d20"
+
+  # Percentile die
+  - trigger: ":d%"
+    replace: "{{percentile}}"
+    vars:
+      - name: percentile
+        type: random
+        params:
+          choices:
+            - "00"
+            - "10"
+            - "20"
+            - "30"
+            - "40"
+            - "50"
+            - "60"
+            - "70"
+            - "80"
+            - "90"
+
+  - trigger: ":dF"
+    replace: "[{{res}}]"
+    vars:
+      - name: res
+        type: random
+        params:
+          choices: 
+            - "+"
+            - "+"
+            - "-"
+            - "-"
+            - "blank"
+            - "blank"
+            
+  # Caltrop Core
+  - trigger: ":caltrop"
+    replace: "{{result}}"
+    vars:
+      - name: result
+        type: random
+        params:
+          choices:
+            - "Absolute Failure. You don't get what you want and things get a lot worse."
+            - "Partial Failure. You don't get what you want but you gain a benefit."
+            - "Partial Success. You get what you want, but things get complicated."
+            - "Absolute Success. You get what you want — and more."
+
+
+  # Einzelmaus
+  - trigger: ":einzspark"
+    replace: "[action: {{action}}; subject: {{subject}}]"
+    vars:
+      - name: action
+        type: match
+        params:
+          trigger: ":einzaction"
+      - name: subject
+        type: match
+        params:
+          trigger: ":einzsubject"
+
+  - trigger: ":einzaction"
+    replace: "{{action_output}}"
+    vars:
+      - name: action_output
+        type: random
+        params:
+          choices:
+            - "compel"
+            - "enchant"
+            - "disguise"
+            - "vanquish"
+            - "commend"
+            - "possess"
+            - "strip"
+            - "dismount"
+            - "befall"
+            - "prey on"
+            - "favor"
+            - "avenge"
+            - "persecute"
+            - "exalt"
+            - "whip"
+            - "strive"
+            - "foresee"
+            - "implore"
+            - "pluck"
+            - "entreat"
+
+  - trigger: ":einzsubject"
+    replace: "{{subject_output}}"
+    vars:
+      - name: subject_output
+        type: random
+        params:
+          choices:
+            - "worship"
+            - "adventure"
+            - "truth"
+            - "target"
+            - "chivalry"
+            - "word"
+            - "history"
+            - "misfortune"
+            - "protection"
+            - "honor"
+            - "unity"
+            - "fervor"
+            - "instance"
+            - "virtue"
+            - "enchantment"
+            - "will"
+            - "madness"
+            - "doubt"
+            - "promise"
+            - "reason"
+
+  - trigger: ":mausreaction"
+    replace: "[{{reaction}}]"
+    vars:
+      - name: reaction
+        type: random
+        params: 
+          choices:
+            - "Hostile. How have mice angered them?"
+            - "Unfriendly. How can they be appeased?"
+            - "Unfriendly. How can they be appeased?"
+            - "Unfriendly. How can they be appeased?"
+            - "Unsure. What could win them over?"
+            - "Unsure. What could win them over?"
+            - "Unsure. What could win them over?"
+            - "Talkative. What could they trade?"
+            - "Talkative. What could they trade?"
+            - "Talkative. What could they trade?"
+            - "Helpful. How can they help mice?"
